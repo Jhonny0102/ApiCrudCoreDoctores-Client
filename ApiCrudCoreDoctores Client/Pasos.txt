@@ -1,0 +1,11 @@
+﻿=============================
+=== Consumir Api Servidor ===
+=============================
+
+1. Descargamos los nuggets necesario(Wep Api y Newton).
+2. Creamos el model/models basico ya que somos clientes.
+3. Creamos el services con los metodos dentro(estos son llamadas a las APIS).
+4. Creamos el controller(Normal) y sus IACTIONRESULT (IA porque necesitamos algo de interfaz).
+5. Configuramos el appsetting y el program.
+6. Configuracmos el layout.
+7. Comprobamos funcionamiento.
