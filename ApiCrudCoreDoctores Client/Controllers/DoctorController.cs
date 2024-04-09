@@ -22,5 +22,34 @@ namespace ApiCrudCoreDoctores_Client.Controllers
             Doctor doctor = await this.service.FindDoctorAsync(id);
             return View(doctor);
         }
+
+        public async Task<IActionResult> Create() 
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(Doctor doc)
+        {
+            await this.service.InsertDoctorAsync(doc.IdDoctor,doc.Apellido,doc.Especialidad,doc.Salario,doc.IdHospital);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            Doctor doctor = await this.service.FindDoctorAsync(id);
+            return View(doctor);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(Doctor doctor)
+        {
+            await this.service.UpdateDoctorAsync(doctor.IdDoctor,doctor.Apellido,doctor.Especialidad,doctor.Salario,doctor.IdHospital);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            await this.service.DeleteDoctorAsync(id);
+            return RedirectToAction("Index");
+        }
     }
 }
